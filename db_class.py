@@ -11,10 +11,51 @@ password = 'Passw0rd2018'
 game_connect = Game(server, database, username, password)
 
 # Print all games
-game_connect.print_all_recipes()
+# game_connect.print_all_games()
 
 
-# Read one recipe
-# input2 = input("\n Insert game name please: ").strip()
-# print(game_connect.search_game_title(f"{input2}"))
+# Search one game
+# input1 = input("\n Insert game name please: ").strip()
+# print(game_connect.search_game_title(f"{input1}"))
+
+
+# Add a game
+
+input_gname = input("Please input your game name: ")
+input_uname = input("Please input username: ")
+input_pnumber = input("Please input phone number: ")
+input_price = input("Please input game price: ")
+input_postcode = input("Please input postcode: ")
+
+game_connect.add_game(input_gname, input_uname, input_pnumber, input_price, input_postcode, game_connect.get_post_json_long(input_postcode), game_connect.get_post_json_lat(input_postcode))
+
+# game_connect.print_all_games()
+#
+
+# Destroy Game
+# game_gone = input("What is the GameID of the game you wish to delete?: ")
+# game_connect.destroy_game(game_gone)
+
+# game_connect.print_all_games()
+
+
+# Write games to file
+#
+# write_to = str(game_connect.return_all_games())
+#
+# game_connect.write_to_file('games.txt', write_to )
+
+
+# Get Longitude of PostCode
+
+print(game_connect.get_post_json_long('BR53DF'))
+
+# Get Latitude of Postode
+print(game_connect.get_post_json_lat('BR53DF'))
+
+
+
+
+
+
 

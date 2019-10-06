@@ -36,7 +36,7 @@ class Game():
 
 
 
-    # Method to search recipe
+    # Method to search game
 
     def search_game_title(self, GameName):
         find_game = self.filter_query(f"SELECT * FROM games WHERE GameName = '{GameName}'")
@@ -61,11 +61,28 @@ class Game():
 
             print(record)
 
+    def return_all_games(self):
+        all_games = self.query_all_games()
+
+        while True:
+
+            record = all_games.fetchall()
+
+            if record is None:
+                break
+
+            return record
+
+
+
+
+
 
     def add_game(self, GameName, UserName, PhoneNumber, Price, PostCode, Longitude, Latitude ):
         self.filter_query(f"INSERT INTO games VALUES ('{GameName}', '{UserName}', '{PhoneNumber}', '{Price}', '{PostCode}', '{Longitude}', '{Latitude}')")
 
-        # this .commit() applied to the connection attribute of the database will make sure the changes commit and alters the persistent data
+        # this .commit() applied to the
+        # connection attribute of the database will make sure the changes commit and alters the persistent data
 
         self.connect_db.commit()
 
@@ -73,7 +90,7 @@ class Game():
 
     def destroy_game(self, game_delete):
 
-        self.filter_query(f"DELETE FROM game WHERE GameID = '{game_delete}'")
+        self.filter_query(f"DELETE FROM games WHERE GameID = '{game_delete}'")
 
 
         self.connect_db.commit()
@@ -84,7 +101,7 @@ class Game():
 
         try:
             with open(file, 'w') as opened_file:
-                opened_file.write(json.dumps(game_item))
+                opened_file.write(game_item)
 
         except FileNotFoundError:
             print("File not found")
@@ -97,23 +114,28 @@ class Game():
 
         print('Update Complete')
 
-    def get_post_json_long(p_code):
+
+    def get_post_json_long(self, p_code):
         req_post = requests.get(f'https://postcodes.io/postcodes/{p_code}')
         req_json = req_post.json()
 
         json_str = json.dumps(req_json)
         resp = json.loads(json_str)
 
-        return resp["result"][0]["longitude"]
+        return resp["result"]["longitude"]
 
-    def get_post_json_lat(p_code):
+
+    def get_post_json_lat(self, p_code):
         req_post = requests.get(f'https://postcodes.io/postcodes/{p_code}')
         req_json = req_post.json()
 
         json_str = json.dumps(req_json)
         resp = json.loads(json_str)
 
-        return resp["result"][0]["latitude"]
+
+        return resp["result"]["latitude"]
+
+
 
 
 
