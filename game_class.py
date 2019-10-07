@@ -43,7 +43,7 @@ class Game():
 
         return find_game.fetchone()
 
-    # Method to be all so search all from table "recipe"
+# Method to be all so search all from table "games"
 
     def query_all_games(self):
         return self.filter_query("SELECT * FROM games")
@@ -76,7 +76,7 @@ class Game():
 
 
 
-
+# Method to add a game
 
     def add_game(self, GameName, UserName, PhoneNumber, Price, PostCode, Longitude, Latitude ):
         self.filter_query(f"INSERT INTO games VALUES ('{GameName}', '{UserName}', '{PhoneNumber}', '{Price}', '{PostCode}', '{Longitude}', '{Latitude}')")
@@ -88,6 +88,7 @@ class Game():
 
         print('Insertion Complete')
 
+# Method to destroy a game
     def destroy_game(self, game_delete):
 
         self.filter_query(f"DELETE FROM games WHERE GameID = '{game_delete}'")
@@ -97,6 +98,7 @@ class Game():
 
         print('Removal complete')
 
+# Method to write DB contents to file
     def write_to_file(self, file, game_item):
 
         try:
@@ -106,15 +108,16 @@ class Game():
         except FileNotFoundError:
             print("File not found")
 
+# Method to update a game in table
     def update_game_in_table(self, value_to_update, new_value, condition_column, condition_value):
 
-        self.filter_query(f"UPDATE books SET {value_to_update} = '{new_value}' WHERE {condition_column} = '{condition_value}'")
+        self.filter_query(f"UPDATE games SET {value_to_update} = '{new_value}' WHERE {condition_column} = '{condition_value}'")
 
         self.connect_db.commit()
 
         print('Update Complete')
 
-
+# Method to get Longitude
     def get_post_json_long(self, p_code):
         req_post = requests.get(f'https://postcodes.io/postcodes/{p_code}')
         req_json = req_post.json()
@@ -124,7 +127,7 @@ class Game():
 
         return resp["result"]["longitude"]
 
-
+# Method to get Latitude
     def get_post_json_lat(self, p_code):
         req_post = requests.get(f'https://postcodes.io/postcodes/{p_code}')
         req_json = req_post.json()

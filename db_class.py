@@ -45,6 +45,16 @@ game_connect = Game(server, database, username, password)
 #
 # game_connect.write_to_file('games.txt', write_to )
 
+# Update games
+
+# input_update = input("What row you like to update")
+# new_value = input("What would you like to update it with ")
+#
+# condition_value = input("What GameID would you like to update")
+#
+# game_connect.update_game_in_table(input_update, new_value, 'GameID', condition_value)
+
+# game_connect.print_all_games()
 
 # Get Longitude of PostCode
 
