@@ -4,7 +4,7 @@
     <list default="true" id="2d23cfb0-0492-4e5f-b781-1c99982ed282" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +39,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.db_class">
+  <component name="RunManager" selected="Python.run">
     <configuration name="db_class" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="game_listings" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -105,8 +105,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.db_class" />
         <item itemvalue="Python.run" />
+        <item itemvalue="Python.db_class" />
         <item itemvalue="Python.game_class" />
       </list>
     </recent_temporary>

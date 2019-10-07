@@ -20,14 +20,14 @@ game_connect = Game(server, database, username, password)
 
 
 # Add a game
-
-input_gname = input("Please input your game name: ")
-input_uname = input("Please input username: ")
-input_pnumber = input("Please input phone number: ")
-input_price = input("Please input game price: ")
-input_postcode = input("Please input postcode: ")
-
-game_connect.add_game(input_gname, input_uname, input_pnumber, input_price, input_postcode, game_connect.get_post_json_long(input_postcode), game_connect.get_post_json_lat(input_postcode))
+#
+# input_gname = input("Please input your game name: ")
+# input_uname = input("Please input username: ")
+# input_pnumber = input("Please input phone number: ")
+# input_price = input("Please input game price: ")
+# input_postcode = input("Please input postcode: ")
+#
+# game_connect.add_game(input_gname, input_uname, input_pnumber, input_price, input_postcode, game_connect.get_post_json_long(input_postcode), game_connect.get_post_json_lat(input_postcode))
 
 # game_connect.print_all_games()
 #
@@ -48,12 +48,12 @@ game_connect.add_game(input_gname, input_uname, input_pnumber, input_price, inpu
 
 # Get Longitude of PostCode
 
-print(game_connect.get_post_json_long('BR53DF'))
+# print(game_connect.get_post_json_long('BR53DF'))
 
 # Get Latitude of Postode
-print(game_connect.get_post_json_lat('BR53DF'))
-
-
+# print(game_connect.get_post_json_lat('BR53DF'))
+#
+#
 
 
 
